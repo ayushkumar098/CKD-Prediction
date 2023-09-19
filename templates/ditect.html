@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kidney Disease Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/diretc.css">
+    <style>
+        body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #ebf6fc;
+    box-sizing: border-box;
+    }
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #24457b;
+    margin: 20px 0;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20%;
+}
+
+.cell{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.cell p{
+    color: #24457b;
+    font-size: 1.6rem;
+    margin: 0%;
+}
+
+.cell input{
+    height: 0.9rem;
+    /* width: 15rem; */
+    background-color: rgba(255,255,255,.46);
+    border:solid 2px #997127;
+    padding: 18px 18px;
+    border-radius: 3px !important;
+}
+
+.name input{
+    width: 38rem;
+}
+
+.age-cell{
+    display: flex;
+    flex-direction: row;
+}
+
+/* .age-cell input{
+    width: 10rem;
+} */
+
+.age{
+    color: #24457b;
+    width: 18rem;
+}
+
+.age input{
+    width: 15rem;
+}
+
+.age:nth-child(2){
+    margin-left:4rem ;
+}
+
+.gender{
+    font-size: 20px;
+}
+
+.gender-cell{
+    display: flex;
+    flex-direction: row;
+}
+
+.gender-cell div{
+    display: flex;
+    flex-direction: row;
+    width: 18rem;
+}
+
+.gender-cell div input,label{
+    /* padding: 20px; */
+    width: 30px;
+    margin-top: 20px;
+}
+
+
+.registerbtn{
+    margin-top: 20px;
+    margin-left: -85px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #24457b;
+    border-radius: 35px;
+    padding: 18px 40px;
+    border: solid 1px #24457b;
+}
+
+
+
+
+
+
+
+
+
+
+/* input[type=text], select {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+} */
+
+/* .registerbtn {
+    background-color: #e48912;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity:1;
+}
+p{
+    color: rgb(58, 139, 11);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+input[type=submit]:hover {
+background-color: #17cce4;
+}
+.center {
+margin: auto;
+width: 60%;
+border: 3px solid #ff9101c5;
+padding: 10px;
+} */
+
+    </style>
+</head>
+
+<body>
+
+
+    <h1>
+        Kidney Disease Prediction
+    </h1>
+    <form action="/predict" method="post">
+        <div class="box">
+            <div class="cell name">
+                <p>Name</p>
+                <input type="text" name="name">
+            </div>
+            
+            <div class="cell age-cell">
+                <div class="age gender">
+                    <p>Gender</p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="gender" value="M"/>
+                            <label for="html">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="gender" value="F">
+                            <label for="css">Female</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="age">
+                    <p>Age</p>
+                    <input type="text" name="age" placeholder="age" required="required" />
+                </div>
+            </div>
+
+            <div class="cell age-cell">
+                <div class="age">
+                    <p>Blood Pressuer</p>
+                    <input type="text" name="blood_pressure" placeholder="blood_pressure" required="required" />
+                </div>
+                <div class="age">
+                    <p>Specific Gravity</p>
+                    <input type="text" name="specific_gravity" placeholder="specific_gravity" required="required" />
+                </div>
+            </div>
+
+            <div class="cell age-cell">
+                <div class="age">
+                    <p>serum_creatinine</p>
+                    <input type="text" name="serum_creatinine" placeholder="serum_creatinine" required="required" />
+                </div>
+                <div class="age">
+                    <p>Sodium</p>
+                    <input type="text" name="sodium" placeholder="sodium" required="required" />
+                </div>
+            </div>
+
+            <div class="cell age-cell">
+                <div class="age">
+                    <p>Potassium</p>
+                    <input type="text" name="potassium" placeholder="potassium" required="required" />
+                </div>
+                <div class="age">
+                    <p>Haemoglobin</p>
+                    <input type="text" name="haemoglobin" placeholder="haemoglobin" required="required" />
+                </div>
+            </div>
+
+            <div class="cell age-cell">
+                <div class="age gender">
+                    <p>red_blood_cells</p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="red_blood_cells" value="1"/>
+                            <label for="html">Normal</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="red_blood_cells" value="0">
+                            <label for="css">Abnormal</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="age gender">
+                    <p>pus_cell</p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="pus_cell" value="1"/>
+                            <label for="html">Normal</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="pus_cell" value="0">
+                            <label for="css">Abnormal</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cell age-cell">
+                <div class="age gender">
+                    <p>pus_cell_clumps</p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="pus_cell_clumps" value="1"/>
+                            <label for="html">Present</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="pus_cell_clumps" value="0">
+                            <label for="css">Not Present</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="age gender">
+                    <p>bacteria</p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="bacteria" value="1"/>
+                            <label for="html">Present</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="bacteria" value="0">
+                            <label for="css">Not Present</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="cell age-cell">
+                <div class="age">
+                    <p>Albumin</p>
+                    <input type="text" name="albumin" placeholder="albumin" required="required" />
+                </div>
+                <div class="age">
+                    <p>Sugar</p>
+                    <input type="text" name="sugar" placeholder="sugar" required="required" />
+                </div>
+            </div> -->
+            
+            <!-- <div class="cell age-cell">
+                <div class="age">
+                    <p>blood_glucose_random </p>
+                    <input type="text" name="blood_glucose_random " placeholder="blood_glucose_random " required="required" />
+                </div>
+                <div class="age">
+                    <p>blood urea</p>
+                    <input type="text" name="blood_urea" placeholder="blood_urea" required="required" />
+                </div>
+            </div> -->
+
+            <!-- <div class="cell age-cell">
+                <div class="age">
+                    <p>packed_cell_volume</p>
+                    <input type="text" name="packed_cell_volume" placeholder="packed_cell_volume" required="required" />
+                </div>
+                <div class="age">
+                    <p>white_blood_cell_count</p>
+                    <input type="text" name="white_blood_cell_count" placeholder="white_blood_cell_count" required="required" />
+                </div>
+            </div> -->
+
+            <!-- <div class="cell age-cell">
+                <div class="age">
+                    <p>red_blood_cell_count</p>
+                    <input type="text" name="red_blood_cell_count" placeholder="red_blood_cell_count" required="required" />
+                </div>
+                <div class="age gender">
+                    <p>hypertension </p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="hypertension " value="1"/>
+                            <label for="html">Yes</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="hypertension " value="0">
+                            <label for="css">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+             <!-- <div class="cell age-cell">
+                <div class="age gender">
+                    <p>diabetes_mellitus</p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="diabetes_mellitus" value="1"/>
+                            <label for="html">Yes</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="diabetes_mellitus" value="0">
+                            <label for="css">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="age gender">
+                    <p>coronary_artery_disease</p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="coronary_artery_disease" value="1"/>
+                            <label for="html">Yes</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="coronary_artery_disease" value="0">
+                            <label for="css">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+             <!-- <div class="cell age-cell">
+                <div class="age gender">
+                    <p>appetite</p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="appetite" value="0"/>
+                            <label for="html">Good</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="appetite" value="1">
+                            <label for="css">Poor</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="age gender">
+                    <p>peda_edema</p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="peda_edema" value="1"/>
+                            <label for="html">Yes</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="peda_edema" value="0">
+                            <label for="css">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- <div class="cell age-cell">
+                <div class="age gender" style="visibility: hidden; max-height: 0%;">
+                    <p>peda_edema</p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="peda_edema" value="1"/>
+                            <label for="html">Yes</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="peda_edema" value="0">
+                            <label for="css">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="age gender">
+                    <p>anemia </p>
+                    <div class="gender-cell">
+                        <div>
+                            <input type="radio" name="anemia " value="1"/>
+                            <label for="html">Yes</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="anemia " value="0">
+                            <label for="css">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <button type="submit" class="registerbtn">PREDICT</button>
+        </div>
+    </form>
+    </div>
+
+</body>
+
+</html>

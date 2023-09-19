@@ -1,0 +1,146 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #ebf6fc;
+    box-sizing: border-box;
+    }
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #24457b;
+    margin: 20px 0;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20%;
+}
+
+.cell{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.cell p{
+    color: #24457b;
+    font-size: 1.6rem;
+    margin: 0%;
+}
+
+.cell input{
+    height: 0.9rem;
+    /* width: 15rem; */
+    background-color: rgba(255,255,255,.46);
+    border:solid 2px #997127;
+    padding: 18px 18px;
+    border-radius: 3px !important;
+}
+
+.name input{
+    width: 38rem;
+}
+
+.age-cell{
+    display: flex;
+    flex-direction: row;
+}
+
+.age{
+    color: #24457b;
+    width: 18rem;
+}
+
+.age input{
+    width: 15rem;
+}
+
+.age:nth-child(2){
+    margin-left:4rem ;
+}
+
+.gender{
+    font-size: 20px;
+}
+
+.gender-cell{
+    display: flex;
+    flex-direction: row;
+}
+
+.gender-cell div{
+    display: flex;
+    flex-direction: row;
+    width: 18rem;
+}
+
+.gender-cell div input,label{
+    /* padding: 20px; */
+    width: 50px;
+    margin-top: 20px;
+}
+
+
+.registerbtn{
+    margin-top: 20px;
+    margin-left: -85px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #24457b;
+    border-radius: 35px;
+    padding: 18px 40px;
+    border: solid 1px #24457b;
+}
+
+
+
+
+
+
+
+
+
+
+/* input[type=text], select {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+} */
+
+/* .registerbtn {
+    background-color: #e48912;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity:1;
+}
+p{
+    color: rgb(58, 139, 11);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+input[type=submit]:hover {
+background-color: #17cce4;
+}
+.center {
+margin: auto;
+width: 60%;
+border: 3px solid #ff9101c5;
+padding: 10px;
+} */

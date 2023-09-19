@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Machine Learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:#ebf6fc;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #24457b;
+    margin: 20px 0;
+}
+
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.registerbtn {
+  background-color: #e48912;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+.col{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+body > div > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: #e48912;
+}
+
+
+</style>
+</head>
+<body>
+
+  
+  <h1>Results</h1>
+{% if prediction == 1%}
+<h2 style="color: #24457b;text-align:center; padding-top: 100px;">Chances of having kidney disease is more, please consult a Doctor.</h2>
+<div  class="col">
+<p style="text-align:center;"><img src="https://img.collegedekhocdn.com/media/img/careers/doctor-clinic.jpg" alt="HTML" width="350" height="250"></p>
+<div class="col-inside">
+  <h3 style="color:#24457b;text-align:center; font-size: x-large;">eGFR value: {{eGFR}}</h3>
+<h3 style="color: #24457b;text-align:center;font-size: large;">Doctor Remarks: {{Lvl}}</h3>
+</div>
+
+</div>
+<!-- <p style="text-align:center;"><img src="https://img.collegedekhocdn.com/media/img/careers/doctor-clinic.jpg" alt="HTML" width="350" height="250"></p>
+<h3 style="color: rgb(189, 16, 16);text-align:center;">eGFR value: {{eGFR}}</h3>
+<h3 style="color: rgb(189, 16, 16);text-align:center;">Doctor Remarks: {{Lvl}}</h3> -->
+
+
+{% elif prediction == 0%}
+<h2 style="color: rgb(25, 197, 25);text-align: center;padding-top: 100px;">No Worries!!! You don't have kidney disease.</h2>
+<div class="col">
+<p style="text-align: center;"></p><img src="https://static.toiimg.com/thumb/75471126.cms?width=680&height=512&imgsize=150927" alt="HTML" width="350" height="250"></p>
+</div>
+<!-- <p style="text-align: center;"></p><img src="https://www.becomingminimalist.com/wp-
+content/uploads/2019/09/how-to-be-happy.jpg" alt="HTML" width="350" height="250"></p> -->
+{% endif %}
+
+
+ 
+ 
+  
+  </body>
+  </html>
